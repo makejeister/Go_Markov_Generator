@@ -1,6 +1,8 @@
 package main
 
-// essay generator using n-gram markov chains
+// AUTHOR: Jake Meister
+// DESCRIPTION: essay generator using n-gram markov chains
+
 // NOTE: dumb implementation with no map optimizations
 
 import (
@@ -96,7 +98,7 @@ func (self *MarkovMap) Generate(filename string, length int) {
     // randomly choose starting n-gram from maps' keys
     keys := make([]string, 0, len(self.gramMap))
     for k := range self.gramMap {
-        keys = append(keys, k)    
+        keys = append(keys, k)
     }
     key := keys[rand.Intn(len(keys))]
 
